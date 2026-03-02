@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Органикалық химия</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(120deg,#00f2fe,#4facfe);
+  color:white;
+  padding:40px;
+  transition:0.3s;
+}
+body.dark{
+  background:#0f172a;
+  color:#e5e7eb;
+}
+h1{text-align:center;}
+a{
+  display:block;
+  margin:10px 0;
+  padding:15px;
+  background:rgba(0,0,0,0.3);
+  border-radius:10px;
+  text-decoration:none;
+  color:white;
+  font-size:18px;
+  transition:0.3s;
+}
+a:hover{
+  background:rgba(0,0,0,0.5);
+}
+button{
+  position:fixed;
+  padding:10px 18px;
+  border:none;
+  border-radius:20px;
+  color:white;
+  cursor:pointer;
+  z-index:999;
+}
+#darkBtn{top:20px;right:20px;background:black;}
+#langBtn{top:70px;right:20px;background:#0072ff;}
+.top-section{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin:40px 0;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.image-box{
+  width:45%;
+  text-align:center;
+}
+.image-box img{
+  width:100%;
+  max-width:350px;
+  height:auto;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+.quote{
+  margin-top:15px;
+  font-style:italic;
+  font-size:16px;
+  min-height:40px;
+  border-top:1px solid rgba(255,255,255,0.5);
+  padding-top:10px;
+}
+@media(max-width:768px){
+  .top-section{
+    flex-direction:column;
+    align-items:center;
+  }
+  .image-box{
+    width:100%;
+  }
+}
+</style>
+</head>
+<body>
+<button id="darkBtn" onclick="toggleDark()">🌙 Dark</button>
+<button id="langBtn" onclick="toggleLang()">🌐 KZ</button>
+<h1 id="mainTitle">Органикалық химия</h1>
+<!-- Фото бөлімі -->
+<div class="top-section">
+<div class="image-box">
+<img src="file:///C:/Users/inat/Downloads/Amirkhan/яяя.JPEG" alt="Organic Chemistry">
+<div class="quote" id="quote1">
+    "Одна из цитат Йенса-Якоба Берцелиуса: «Кислород — это вещество, вокруг которого вращается земная химия»."
+</div>
+</div>
+
+<div class="image-box">
+  <img src="file:///C:/Users/inat/Downloads/Amirkhan/ссс.JPEG" alt="Chemistry Lab">
+  <div class="quote" id="quote2">
+    "Цитата Владимира Марковникова: «Ученым можешь ты не быть, а гражданином быть обязан»."
+</div>
+</div>
+</div>
+<h2 id="ch12">XII тарау</h2>
+<a href="бір.htm" id="t1">§ I. Органикалық заттардың құрамы</a>
+<a href="екі.htm" id="t2">§ II. Органикалық формулалар</a>
+<a href="үш.htm" id="t3">§ III. Құрылысы мен изомерленуі</a>
+<a href="төрт.htm" id="t4">§ IV. Жіктелуі</a>
+<a href="бес.htm" id="t5">§ V. Номенклатура</a>
+<h2 id="ch13">XIII тарау</h2>
+<a href="алты.htm" id="t6">§ VI. Алкендер</a>
+<a href="жеті.htm" id="t7">§ VII. Полимерлену</a>
+<a href="сегіз.htm" id="t8">§ VIII. Каучук және резеңке</a>
+<a href="тоғыз.htm" id="t9">§ IX. Мұнай</a>
+<script>
+let dark = false;
+function toggleDark(){
+  document.body.classList.toggle("dark");
+  dark = !dark;
+  document.getElementById("darkBtn").innerText = dark ? "☀ Light" : "🌙 Dark";
+}
+let lang = "kz";
+function toggleLang(){
+  if(lang === "kz"){
+    // Қазақ → Орыс
+    document.getElementById("mainTitle").innerText = "Органическая химия";
+    document.getElementById("ch12").innerText = "Глава XII";
+    document.getElementById("ch13").innerText = "Глава XIII";
+    document.getElementById("t1").innerText = "§ I. Состав органических веществ";
+    document.getElementById("t2").innerText = "§ II. Органические формулы";
+    document.getElementById("t3").innerText = "§ III. Строение и изомерия";
+    document.getElementById("t4").innerText = "§ IV. Классификация";
+    document.getElementById("t5").innerText = "§ V. Номенклатура";
+    document.getElementById("t6").innerText = "§ VI. Алкены";
+    document.getElementById("t7").innerText = "§ VII. Полимеризация";
+    document.getElementById("t8").innerText = "§ VIII. Каучук и резина";
+    document.getElementById("t9").innerText = "§ IX. Нефть";
+    document.getElementById("quote1").innerText = "Одна из цитат Йенса-Якоба Берцелиуса: «Кислород — это вещество, вокруг которого вращается земная химия».";
+    document.getElementById("quote2").innerText = "Цитата Владимира Марковникова: «Ученым можешь ты не быть, а гражданином быть обязан».";
+    document.getElementById("langBtn").innerText = "🌐 RU";
+    lang = "ru";
+  } else if(lang === "ru"){
+    // Орыс → Ағылшын
+    document.getElementById("mainTitle").innerText = "Organic Chemistry";
+    document.getElementById("ch12").innerText = "Chapter XII";
+    document.getElementById("ch13").innerText = "Chapter XIII";
+    document.getElementById("t1").innerText = "§ I. Composition of Organic Substances";
+    document.getElementById("t2").innerText = "§ II. Organic Formulas";
+    document.getElementById("t3").innerText = "§ III. Structure and Isomerism";
+    document.getElementById("t4").innerText = "§ IV. Classification";
+    document.getElementById("t5").innerText = "§ V. Nomenclature";
+    document.getElementById("t6").innerText = "§ VI. Alkenes";
+    document.getElementById("t7").innerText = "§ VII. Polymerization";
+    document.getElementById("t8").innerText = "§ VIII. Rubber";
+    document.getElementById("t9").innerText = "§ IX. Oil";
+    document.getElementById("quote1").innerText = "One of Jens-Jacob Berzelius's quotes: 'Oxygen is the substance around which Earth’s chemistry revolves.'";
+    document.getElementById("quote2").innerText = "Quote by Vladimir Markovnikov: 'You may not be a scientist, but you must be a citizen.'";
+    document.getElementById("langBtn").innerText = "🌐 EN";
+    lang = "en";
+  } else {
+    location.reload();
+  }
+}
+</script>
+</body>
+</html>
